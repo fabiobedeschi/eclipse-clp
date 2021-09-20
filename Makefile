@@ -14,11 +14,16 @@ cleanup:
 
 .PHONY: run
 run:
-	docker run --rm -v=`pwd`/src:/root/eclipseclp -it eclipse-clp eclipse
+	docker run --rm -idP -v=`pwd`/src:/root/eclipseclp --name eclipse-clp eclipse-clp
+
+.PHONY: stop
+stop:
+	docker stop eclipse-clp
 
 .PHONY: bash
 bash:
-	docker run --rm -v=`pwd`/src:/root/eclipseclp -it eclipse-clp bash
+	docker exec -it eclipse-clp bash
 
 .PHONY: eclipse
-eclipse: run
+eclipse:
+	docker exec -it eclipse-clp eclipse
