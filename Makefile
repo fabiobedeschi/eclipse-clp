@@ -1,29 +1,33 @@
-.DEFAULT_GOAL:=run
+.DEFAULT_GOAL:=eclipse
 
 .PHONY: build
 build:
-	docker build --tag eclipse-clp .
+	cd docker && docker-compose build
 
 .PHONY: build.nocache
 build.nocache:
-	docker build --no-cache --tag eclipse-clp .
+	cd docker && docker-compose build --no-cache
 
 .PHONY: cleanup
 cleanup:
 	docker rmi `docker images -f dangling=true -q`
 
-.PHONY: run
-run:
-	docker run --rm -idP -v=`pwd`/src:/root/eclipseclp --name eclipse-clp eclipse-clp
+.PHONY: compose.up
+compose.up:
+	cd docker && docker-compose up -d
 
-.PHONY: stop
-stop:
-	docker stop eclipse-clp
+.PHONY: compose.stop
+compose.stop:
+	cd docker && docker-compose stop
+
+.PHONY: compose.down
+compose.down:
+	cd docker && docker-compose down
 
 .PHONY: bash
 bash:
-	docker exec -it eclipse-clp bash
+	cd docker && docker-compose exec eclipse bash
 
 .PHONY: eclipse
 eclipse:
-	docker exec -it eclipse-clp eclipse
+	cd docker && docker-compose exec eclipse bash -c '/root/eclipseclp-install/bin/x86_64_linux/eclipse'

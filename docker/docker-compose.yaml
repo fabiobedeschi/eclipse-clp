@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+
+  eclipse:
+    container_name: eclipse-clp
+    build:
+      context: ./eclipse
+    env_file:
+      - .env
+    volumes:
+      - ./eclipse/init.sh:/root/init.sh
+      - ${PROJECT_ABSOLUTE_PATH}/src:/root/eclipseclp
+      - ${PROJECT_ABSOLUTE_PATH}/doc:/root/eclipseclp-install/doc
+    command: ["bash", "/root/init.sh"]
