@@ -4,6 +4,7 @@ This project is meant to be a fast turnkey configuration to run a dockerized ECL
 
 ## Get started
 
+0. run `cp docker/.env.dist docker/.env` and setup the newly created file by your needs
 1. `make build` to build the docker image
 2. `make compose.up` to run the docker container and install ECLIPSeCLP
 3. `make eclipse` to spawn an `eclipse` interactive shell
