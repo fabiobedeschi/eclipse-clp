@@ -1,11 +1,11 @@
 .DEFAULT_GOAL:=eclipse
 
-.PHONY: build
-build:
+.PHONY: compose.build
+compose.build:
 	cd docker && docker-compose build
 
-.PHONY: build.nocache
-build.nocache:
+.PHONY: compose.build.nocache
+compose.build.nocache:
 	cd docker && docker-compose build --no-cache
 
 .PHONY: cleanup
@@ -30,4 +30,8 @@ bash:
 
 .PHONY: eclipse
 eclipse:
-	cd docker && docker-compose exec eclipse bash -c '/root/eclipseclp-install/bin/x86_64_linux/eclipse'
+	cd docker && docker-compose exec eclipse bash -c 'eclipse'
+
+.PHONY: doc
+doc:
+	cd docker && docker-compose cp eclipse:/root/eclipseclp-install/doc ../
