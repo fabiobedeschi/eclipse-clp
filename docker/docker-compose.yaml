@@ -12,5 +12,5 @@ services:
     env_file:
       - .env
     volumes:
-      - ${PROJECT_ABSOLUTE_PATH}/exercises:/root/eclipseclp
-      - ${PROJECT_ABSOLUTE_PATH}/examples:/root/eclipseclp/examples
+      - ../src:/root/eclipseclp
+      - ../examples:/root/eclipseclp/examples

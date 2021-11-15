@@ -9,6 +9,8 @@ This project is meant to be a fast turnkey configuration to run a dockerized ECL
 2. `make compose.up` to run the docker container and install ECLIPSeCLP
 3. `make eclipse` to spawn an `eclipse` interactive shell
 
+> Points 1,2 and 3 can be achieved just by typing `make` or `make init`
+
 ### Notes
 
 - `make doc` if you want to get the documentation available on your host
@@ -16,4 +18,4 @@ This project is meant to be a fast turnkey configuration to run a dockerized ECL
 - `make compose.build.nocache` to (re)build the image without cached layers
 - `make cleanup` to remove older built images from your system
 - `make compose.stop` to stop the running container
-- `make compose.down` to prune the running container. Next restart will require reinstallation of eclipse.
+- `make compose.down` to prune the running container

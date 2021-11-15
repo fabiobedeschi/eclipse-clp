@@ -2,4 +2,4 @@
 !.env.dist
 !.gitignore
 doc/
-exercises/
+src/

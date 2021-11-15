@@ -1,4 +1,7 @@
-.DEFAULT_GOAL:=eclipse
+.DEFAULT_GOAL:=init
+
+.PHONY: init
+init: compose.build compose.up doc eclipse
 
 .PHONY: compose.build
 compose.build:
