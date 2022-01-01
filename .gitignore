@@ -2,4 +2,5 @@
 !.env.dist
 !.gitignore
 doc/
-src/
+src/*
+!src/example*

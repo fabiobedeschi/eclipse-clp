@@ -11,7 +11,15 @@ This project is meant to be a fast turnkey configuration to run a dockerized ECL
 
 > Points 1,2 and 3 can be achieved just by typing `make` or `make init`
 
+## Usage
+
+Write your code and place into the `src/` folder. Then load it in `eclipse` and execute.
+
+> Any file in `src/` will be ignored by git unless it's name starts with the `example` keyword. This is used to simplify the docker mount of the `src/` dir and at the same time prevent unwanted file additions to the codebase.
+
 ### Notes
+
+Additional commands:
 
 - `make doc` if you want to get the documentation available on your host
 - `make bash` to use the same container with a `bash` shell

@@ -13,4 +13,3 @@ services:
       - .env
     volumes:
       - ../src:/root/eclipseclp
-      - ../examples:/root/eclipseclp/examples
